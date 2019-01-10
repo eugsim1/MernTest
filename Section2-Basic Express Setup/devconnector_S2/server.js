@@ -1,3 +1,5 @@
+/// first application
+
 const express = require('express');
 const mongoose = require('mongoose');
 
@@ -11,14 +13,20 @@ const app = express();
 const db = require('./config/keys').mongoURI;
 
 // Connect to MongoDB
+// promises syntax
+// then ==> success
+//  .catch => if error  with promises
 mongoose
   .connect(db)
   .then(() => console.log('MongoDB Connected'))
   .catch(err => console.log(err));
 
+  // arrow funtion
 app.get('/', (req, res) => res.send('Hello World'));
 
 // Use Routes
+// 3 use cases ...c reate folder  routes
+
 app.use('/api/users', users);
 app.use('/api/profile', profile);
 app.use('/api/posts', posts);
