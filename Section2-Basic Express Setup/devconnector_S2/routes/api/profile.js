@@ -1,5 +1,5 @@
 
-///  profile    several   fileds    ....    
+///  profile    several   fileds    ....
 // same code as users posts
 // test localhost:5000/api/test
 

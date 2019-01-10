@@ -11,6 +11,7 @@ const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
 // Load User model
+// test if user exist in database
 const User = require('../../models/User');
 
 // @route   GET api/users/test
@@ -29,6 +30,10 @@ router.post('/register', (req, res) => {
     return res.status(400).json(errors);
   }
 
+
+// find email which matches ... req.body
+// add bodyparser
+// .then promises //#endregion
   User.findOne({ email: req.body.email }).then(user => {
     if (user) {
       errors.email = 'Email already exists';

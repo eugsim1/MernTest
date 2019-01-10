@@ -1,3 +1,7 @@
+// create users in mongo db
+// file name start with capital
+
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
