@@ -4,7 +4,9 @@
 
 // get /test the  /test will be translated to api/test ...
 // res.json => res.send  with json we server json 
-// expot the router  last line  
+// export the router  last line  
+
+// replies to  requests /api/users/test
 
 
 
