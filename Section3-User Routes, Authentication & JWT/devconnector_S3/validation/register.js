@@ -1,5 +1,9 @@
 const Validator = require('validator');
 const isEmpty = require('./is-empty');
+//latest version of import
+// this will give errors
+//import isEmpty from './is-empty';
+
 
 module.exports = function validateRegisterInput(data) {
   let errors = {};
@@ -9,6 +13,8 @@ module.exports = function validateRegisterInput(data) {
   data.password = !isEmpty(data.password) ? data.password : '';
   data.password2 = !isEmpty(data.password2) ? data.password2 : '';
 
+// validator is requiree  
+// validation lenght  
   if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
     errors.name = 'Name must be between 2 and 30 characters';
   }
@@ -41,6 +47,9 @@ module.exports = function validateRegisterInput(data) {
     errors.password2 = 'Passwords must match';
   }
 
+// all methods of validator shoudl be strings
+// isEmpty shoudl work object
+// isempty.js    
   return {
     errors,
     isValid: isEmpty(errors)
